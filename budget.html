@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget - ExpenseTracker Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet pulse"></i>
+                <h2>ExpenseTracker<span class="pro-badge">Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                    <li class="active"><a href="budget.html"><i class="fas fa-piggy-bank"></i> Budget</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Devisingh </h4>
+                    <p><span class="premium-badge">Premium</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="budget-period">
+                    <select id="budget-month">
+                        <option value="5">May 2025</option>
+                        <option value="6" selected>June 2025</option>
+                        <option value="7">July 2025</option>
+                    </select>
+                </div>
+                <div class="top-bar-actions">
+                    <button class="btn btn-primary" id="add-budget-btn">
+                        <i class="fas fa-plus"></i> Add Budget
+                    </button>
+                </div>
+            </header>
+
+            <!-- Budget Section -->
+            <section id="budget" class="budget-section">
+                <div class="section-header">
+                    <h1>Monthly Budget</h1>
+                    <div class="budget-summary">
+                        <div class="budget-total">
+                            <span class="label">Total Budget:</span>
+                            <span class="value">₹2,0000.00</span>
+                        </div>
+                        <div class="budget-spent">
+                            <span class="label">Spent:</span>
+                            <span class="value">₹1,2450.00</span>
+                        </div>
+                        <div class="budget-remaining">
+                            <span class="label">Remaining:</span>
+                            <span class="value">₹7550.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="budget-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 62%;"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <span>62% of budget used</span>
+                        <span>18 days remaining</span>
+                    </div>
+                </div>
+                
+                <div class="budget-categories">
+                    <h2>Category Budgets</h2>
+                    
+                    <div class="budget-card">
+                        <div class="budget-card-header">
+                            <div class="category-info">
+                                <div class="category-icon" style="background-color: rgba(114, 124, 245, 0.1);">
+                                    <i class="fas fa-utensils" style="color: #727cf5;"></i>
+                                </div>
+                                <h3>Food & Dining</h3>
+                            </div>
+                            <div class="budget-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                        <div class="budget-card-body">
+                            <div class="budget-amounts">
+                                <div class="budget-amount">
+                                    <span class="label">Budget:</span>
+                                    <span class="value">₹500.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Spent:</span>
+                                    <span class="value">₹350.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Remaining:</span>
+                                    <span class="value">₹150.00</span>
+                                </div>
+                            </div>
+                            <div class="budget-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%; background-color: #727cf5;"></div>
+                                </div>
+                                <div class="progress-percentage">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <div class="budget-card-header">
+                            <div class="category-info">
+                                <div class="category-icon" style="background-color: rgba(10, 207, 151, 0.1);">
+                                    <i class="fas fa-car" style="color: #0acf97;"></i>
+                                </div>
+                                <h3>Transportation</h3>
+                            </div>
+                            <div class="budget-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                        <div class="budget-card-body">
+                            <div class="budget-amounts">
+                                <div class="budget-amount">
+                                    <span class="label">Budget:</span>
+                                    <span class="value">₹300.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Spent:</span>
+                                    <span class="value">₹120.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Remaining:</span>
+                                    <span class="value">₹180.00</span>
+                                </div>
+                            </div>
+                            <div class="budget-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%; background-color: #0acf97;"></div>
+                                </div>
+                                <div class="progress-percentage">40%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <div class="budget-card-header">
+                            <div class="category-info">
+                                <div class="category-icon" style="background-color: rgba(255, 159, 67, 0.1);">
+                                    <i class="fas fa-film" style="color: #ff9f43;"></i>
+                                </div>
+                                <h3>Entertainment</h3>
+                            </div>
+                            <div class="budget-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                        <div class="budget-card-body">
+                            <div class="budget-amounts">
+                                <div class="budget-amount">
+                                    <span class="label">Budget:</span>
+                                    <span class="value">₹200.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Spent:</span>
+                                    <span class="value">₹85.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Remaining:</span>
+                                    <span class="value">₹115.00</span>
+                                </div>
+                            </div>
+                            <div class="budget-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 42%; background-color: #ff9f43;"></div>
+                                </div>
+                                <div class="progress-percentage">42%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <div class="budget-card-header">
+                            <div class="category-info">
+                                <div class="category-icon" style="background-color: rgba(250, 92, 124, 0.1);">
+                                    <i class="fas fa-shopping-basket" style="color: #fa5c7c;"></i>
+                                </div>
+                                <h3>Groceries</h3>
+                            </div>
+                            <div class="budget-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                        <div class="budget-card-body">
+                            <div class="budget-amounts">
+                                <div class="budget-amount">
+                                    <span class="label">Budget:</span>
+                                    <span class="value">₹400.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Spent:</span>
+                                    <span class="value">₹210.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Remaining:</span>
+                                    <span class="value">₹190.00</span>
+                                </div>
+                            </div>
+                            <div class="budget-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 52%; background-color: #fa5c7c;"></div>
+                                </div>
+                                <div class="progress-percentage">52%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="budget-card">
+                        <div class="budget-card-header">
+                            <div class="category-info">
+                                <div class="category-icon" style="background-color: rgba(50, 58, 70, 0.1);">
+                                    <i class="fas fa-bolt" style="color: #323a46;"></i>
+                                </div>
+                                <h3>Utilities</h3>
+                            </div>
+                            <div class="budget-actions">
+                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                        <div class="budget-card-body">
+                            <div class="budget-amounts">
+                                <div class="budget-amount">
+                                    <span class="label">Budget:</span>
+                                    <span class="value">₹250.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Spent:</span>
+                                    <span class="value">₹150.00</span>
+                                </div>
+                                <div class="budget-amount">
+                                    <span class="label">Remaining:</span>
+                                    <span class="value">₹100.00</span>
+                                </div>
+                            </div>
+                            <div class="budget-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%; background-color: #323a46;"></div>
+                                </div>
+                                <div class="progress-percentage">60%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Budget Modal -->
+    <div id="budget-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Budget</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="budget-form">
+                    <div class="form-group">
+                        <label for="budget-category">Category</label>
+                        <select id="budget-category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Food & Dining">Food & Dining</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Utilities">Utilities</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget-amount">Budget Amount (₹)</label>
+                        <input type="number" id="budget-amount" name="amount" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget-period">Period</label>
+                        <select id="budget-period" name="period">
+                            <option value="monthly" selected>Monthly</option>
+                            <option value="quarterly">Quarterly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-budget" class="btn btn-outline">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Budget</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="budget.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - ExpenseTracker Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet pulse"></i>
+                <h2>ExpenseTracker<span class="pro-badge">Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li class="active"><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                    <li><a href="budget.html"><i class="fas fa-piggy-bank"></i> Budget</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Devisingh</h4>
+                    <p><span class="premium-badge">Premium</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search categories...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="btn btn-primary" id="add-category-btn">
+                        <i class="fas fa-plus"></i> Add Category
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Categories Section -->
+            <section id="categories" class="categories-section">
+                <div class="section-header">
+                    <h1>Expense Categories</h1>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card" style="border-left: 4px solid #727cf5;">
+                        <div class="category-icon" style="background-color: rgba(114, 124, 245, 0.1);">
+                            <i class="fas fa-utensils" style="color: #727cf5;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Food & Dining</h3>
+                            <p>₹350.00 spent this month</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%; background-color: #727cf5;"></div>
+                            </div>
+                            <p class="category-stats">15 transactions</p>
+                        </div>
+                        <div class="category-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" style="border-left: 4px solid #0acf97;">
+                        <div class="category-icon" style="background-color: rgba(10, 207, 151, 0.1);">
+                            <i class="fas fa-car" style="color: #0acf97;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Transportation</h3>
+                            <p>₹120.00 spent this month</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%; background-color: #0acf97;"></div>
+                            </div>
+                            <p class="category-stats">8 transactions</p>
+                        </div>
+                        <div class="category-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" style="border-left: 4px solid #ff9f43;">
+                        <div class="category-icon" style="background-color: rgba(255, 159, 67, 0.1);">
+                            <i class="fas fa-film" style="color: #ff9f43;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Entertainment</h3>
+                            <p>₹85.00 spent this month</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 25%; background-color: #ff9f43;"></div>
+                            </div>
+                            <p class="category-stats">4 transactions</p>
+                        </div>
+                        <div class="category-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" style="border-left: 4px solid #fa5c7c;">
+                        <div class="category-icon" style="background-color: rgba(250, 92, 124, 0.1);">
+                            <i class="fas fa-shopping-basket" style="color: #fa5c7c;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Groceries</h3>
+                            <p>₹210.00 spent this month</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 55%; background-color: #fa5c7c;"></div>
+                            </div>
+                            <p class="category-stats">6 transactions</p>
+                        </div>
+                        <div class="category-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" style="border-left: 4px solid #323a46;">
+                        <div class="category-icon" style="background-color: rgba(50, 58, 70, 0.1);">
+                            <i class="fas fa-bolt" style="color: #323a46;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Utilities</h3>
+                            <p>₹150.00 spent this month</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 35%; background-color: #323a46;"></div>
+                            </div>
+                            <p class="category-stats">3 transactions</p>
+                        </div>
+                        <div class="category-actions">
+                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Category Modal -->
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Category</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="category-form">
+                    <div class="form-group">
+                        <label for="category-name">Category Name</label>
+                        <input type="text" id="category-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category-icon">Icon</label>
+                        <select id="category-icon" name="icon">
+                            <option value="fa-utensils">Food</option>
+                            <option value="fa-car">Transportation</option>
+                            <option value="fa-film">Entertainment</option>
+                            <option value="fa-shopping-basket">Groceries</option>
+                            <option value="fa-bolt">Utilities</option>
+                            <option value="fa-tag">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category-color">Color</label>
+                        <input type="color" id="category-color" name="color" value="#727cf5">
+                    </div>
+                    <div class="form-group">
+                        <label for="category-budget">Monthly Budget (₹)</label>
+                        <input type="number" id="category-budget" name="budget" step="0.01" min="0">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-category" class="btn btn-outline">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="categories.js"></script>
+</body>
+</html>

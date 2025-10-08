@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - ExpenseTracker Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet pulse"></i>
+                <h2>ExpenseTracker<span class="pro-badge">Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li class="active"><a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                    <li><a href="budget.html"><i class="fas fa-piggy-bank"></i> Budget</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Devisingh</h4>
+                    <p><span class="premium-badge">Premium</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="date-filter">
+                    <select id="report-period">
+                        <option value="week">This Week</option>
+                        <option value="month" selected>This Month</option>
+                        <option value="quarter">This Quarter</option>
+                        <option value="year">This Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                <div class="top-bar-actions">
+                    <button class="btn btn-outline" id="export-report-btn">
+                        <i class="fas fa-download"></i> Export Report
+                    </button>
+                    <button class="btn btn-primary" id="print-report-btn">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                </div>
+            </header>
+
+            <!-- Reports Section -->
+            <section id="reports" class="reports-section">
+                <div class="section-header">
+                    <h1>Expense Reports</h1>
+                </div>
+                
+                <div class="report-cards">
+                    <div class="report-card">
+                        <div class="report-card-header">
+                            <h3>Total Expenses</h3>
+                            <div class="report-period">May 2025</div>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="report-value">₹1,245.00</div>
+                            <div class="report-trend up">
+                                <i class="fas fa-arrow-up"></i> 12% from last month
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-card-header">
+                            <h3>Average Daily Spend</h3>
+                            <div class="report-period">May 2025</div>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="report-value">₹40.16</div>
+                            <div class="report-trend down">
+                                <i class="fas fa-arrow-down"></i> 5% from last month
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-card">
+                        <div class="report-card-header">
+                            <h3>Top Category</h3>
+                            <div class="report-period">May 2025</div>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="report-value">Food & Dining</div>
+                            <div class="report-trend">
+                                ₹350.00 (28% of total)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-charts">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Expenses by Category</h3>
+                            <div class="chart-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="category-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Monthly Trend</h3>
+                            <div class="chart-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="trend-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-details">
+                    <div class="report-table-header">
+                        <h3>Expense Breakdown</h3>
+                        <div class="table-actions">
+                            <div class="search-bar">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search expenses...">
+                            </div>
+                            <select id="table-filter">
+                                <option value="all">All Categories</option>
+                                <option value="food">Food & Dining</option>
+                                <option value="transport">Transportation</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="groceries">Groceries</option>
+                                <option value="utilities">Utilities</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="report-table-container">
+                        <table class="report-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="report-table-body">
+                                <tr>
+                                    <td>May 28, 2025</td>
+                                    <td>Grocery Shopping</td>
+                                    <td><span class="category-tag" style="background-color: rgba(250, 92, 124, 0.1); color: #fa5c7c;">Groceries</span></td>
+                                    <td>₹85.42</td>
+                                </tr>
+                                <tr>
+                                    <td>May 26, 2025</td>
+                                    <td>Restaurant Dinner</td>
+                                    <td><span class="category-tag" style="background-color: rgba(114, 124, 245, 0.1); color: #727cf5;">Food & Dining</span></td>
+                                    <td>₹64.30</td>
+                                </tr>
+                                <tr>
+                                    <td>May 25, 2025</td>
+                                    <td>Uber Ride</td>
+                                    <td><span class="category-tag" style="background-color: rgba(10, 207, 151, 0.1); color: #0acf97;">Transportation</span></td>
+                                    <td>₹18.75</td>
+                                </tr>
+                                <tr>
+                                    <td>May 22, 2025</td>
+                                    <td>Movie Tickets</td>
+                                    <td><span class="category-tag" style="background-color: rgba(255, 159, 67, 0.1); color: #ff9f43;">Entertainment</span></td>
+                                    <td>₹32.50</td>
+                                </tr>
+                                <tr>
+                                    <td>May 20, 2025</td>
+                                    <td>Electricity Bill</td>
+                                    <td><span class="category-tag" style="background-color: rgba(50, 58, 70, 0.1); color: #323a46;">Utilities</span></td>
+                                    <td>₹95.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-pagination">
+                        <div class="pagination-info">Showing 1-5 of 24 entries</div>
+                        <div class="pagination-controls">
+                            <button class="btn-icon" disabled><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn-page active">1</button>
+                            <button class="btn-page">2</button>
+                            <button class="btn-page">3</button>
+                            <button class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="reports.js"></script>
+</body>
+</html>

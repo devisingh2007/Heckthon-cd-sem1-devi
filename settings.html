@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - ExpenseTracker Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet pulse"></i>
+                <h2>ExpenseTracker<span class="pro-badge">Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                    <li><a href="budget.html"><i class="fas fa-piggy-bank"></i> Budget</a></li>
+                    <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Devisingh</h4>
+                    <p><span class="premium-badge">Premium</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 class="page-title">Settings</h1>
+                <div class="top-bar-actions">
+                    <button class="btn btn-primary" id="save-settings-btn">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </header>
+
+            <!-- Settings Section -->
+            <section id="settings" class="settings-section">
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="account">Account</button>
+                    <button class="tab-btn" data-tab="preferences">Preferences</button>
+                    <button class="tab-btn" data-tab="notifications">Notifications</button>
+                    <button class="tab-btn" data-tab="security">Security</button>
+                    <button class="tab-btn" data-tab="data">Data Management</button>
+                </div>
+                
+                <div class="settings-content">
+                    <!-- Account Tab -->
+                    <div class="tab-content active" id="account-tab">
+                        <div class="settings-card">
+                            <h2>Profile Information</h2>
+                            <div class="profile-section">
+                                <div class="profile-avatar">
+                                    <div class="avatar-preview">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm">Change Avatar</button>
+                                </div>
+                                <div class="profile-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="first-name">First Name</label>
+                                            <input type="text" id="first-name" value="Devisingh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last-name">Last Name</label>
+                                            <input type="text" id="last-name" value="Rajput">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" value="devisinghrajput.cd@gmail.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" value="+91 7383629107">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h2>Subscription</h2>
+                            <div class="subscription-info">
+                                <div class="subscription-status">
+                                    <span class="premium-badge">Premium</span>
+                                    <p>Your subscription renews on June 15, 2025</p>
+                                </div>
+                                <div class="subscription-actions">
+                                    <button class="btn btn-outline">Manage Subscription</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferences Tab -->
+                    <div class="tab-content" id="preferences-tab">
+                        <div class="settings-card">
+                            <h2>Display Settings</h2>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Theme</h3>
+                                    <p>Choose your preferred theme</p>
+                                </div>
+                                <div class="option-control">
+                                    <select id="theme-select">
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="system">System Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Currency</h3>
+                                    <p>Set your default currency</p>
+                                </div>
+                                <div class="option-control">
+                                    <select id="currency-select">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="IND">IND (₹)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="CAD">CAD ($)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Date Format</h3>
+                                    <p>Choose how dates are displayed</p>
+                                </div>
+                                <div class="option-control">
+                                    <select id="date-format-select">
+                                        <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h2>Dashboard Settings</h2>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Default View</h3>
+                                    <p>Choose your default dashboard view</p>
+                                </div>
+                                <div class="option-control">
+                                    <select id="dashboard-view-select">
+                                        <option value="summary">Summary</option>
+                                        <option value="detailed">Detailed</option>
+                                        <option value="minimal">Minimal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Show Recent Transactions</h3>
+                                    <p>Display recent transactions on dashboard</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notifications Tab -->
+                    <div class="tab-content" id="notifications-tab">
+                        <div class="settings-card">
+                            <h2>Notification Preferences</h2>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Email Notifications</h3>
+                                    <p>Receive notifications via email</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Push Notifications</h3>
+                                    <p>Receive notifications in browser</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>SMS Notifications</h3>
+                                    <p>Receive notifications via SMS</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h2>Notification Types</h2>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Budget Alerts</h3>
+                                    <p>Get notified when you're close to budget limits</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Unusual Activity</h3>
+                                    <p>Get notified about unusual spending patterns</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Weekly Summary</h3>
+                                    <p>Receive weekly spending summaries</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Tab -->
+                    <div class="tab-content" id="security-tab">
+                        <div class="settings-card">
+                            <h2>Password</h2>
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password">
+                            </div>
+                            <button class="btn btn-primary">Change Password</button>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h2>Two-Factor Authentication</h2>
+                            <div class="settings-option">
+                                <div class="option-label">
+                                    <h3>Enable 2FA</h3>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <div class="option-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="settings-option disabled">
+                                <div class="option-label">
+                                    <h3>Authentication Method</h3>
+                                    <p>Choose your preferred 2FA method</p>
+                                </div>
+                                <div class="option-control">
+                                    <select id="auth-method-select" disabled>
+                                        <option value="app">Authenticator App</option>
+                                        <option value="sms">SMS</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Management Tab -->
+                    <div class="tab-content" id="data-tab">
+                        <div class="settings-card">
+                            <h2>Import & Export</h2>
+                            <div class="data-action">
+                                <div class="data-action-info">
+                                    <h3>Import Data</h3>
+                                    <p>Import expenses from CSV or Excel file</p>
+                                </div>
+                                <button class="btn btn-outline">Import</button>
+                            </div>
+                            <div class="data-action">
+                                <div class="data-action-info">
+                                    <h3>Export Data</h3>
+                                    <p>Export your expenses to CSV or Excel</p>
+                                </div>
+                                <button class="btn btn-outline">Export</button>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h2>Data Cleanup</h2>
+                            <div class="data-action">
+                                <div class="data-action-info">
+                                    <h3>Clear All Data</h3>
+                                    <p>Delete all your expense data (cannot be undone)</p>
+                                </div>
+                                <button class="btn btn-danger">Clear Data</button>
+                            </div>
+                            <div class="data-action">
+                                <div class="data-action-info">
+                                    <h3>Delete Account</h3>
+                                    <p>Permanently delete your account and all data</p>
+                                </div>
+                                <button class="btn btn-danger">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

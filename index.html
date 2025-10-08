@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTracker Pro - Smart Expense Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wallet pulse"></i>
+                <h2>ExpenseTracker<span class="pro-badge">Pro</span></h2>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a></li>
+                    <li><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                    <li><a href="budget.html"><i class="fas fa-piggy-bank"></i> Budget</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <h4>Devisingh</h4>
+                    <p><span class="premium-badge">Premium</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search expenses...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="btn btn-primary" id="add-expense-btn">
+                        <i class="fas fa-plus"></i> Add Expense
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="section-header-wrapper">
+                    <h1>Dashboard <span class="greeting">Good morning, Devisingh!</span></h1>
+                    <div class="date-display">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="current-date">nav 4, 2025</span>
+                    </div>
+                </div>
+                
+                <div class="date-filter">
+                    <button class="btn btn-outline active">Today</button>
+                    <button class="btn btn-outline">Week</button>
+                    <button class="btn btn-outline">Month</button>
+                    <button class="btn btn-outline">Year</button>
+                    <div class="custom-date">
+                        <i class="fas fa-calendar"></i>
+                        <span>Custom Range</span>
+                    </div>
+                </div>
+
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(114, 124, 245, 0.1);">
+                            <i class="fas fa-dollar-sign" style="color: #727cf5;"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Total Expenses</h3>
+                            <p class="stat-value total-amount">₹0.00</p>
+                            <p class="stat-change increase"><i class="fas fa-arrow-up"></i> <span class="percent-change">0%</span> from last month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(255, 159, 67, 0.1);">
+                            <i class="fas fa-receipt" style="color: #ff9f43;"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Total Transactions</h3>
+                            <p class="stat-value total-count">0</p>
+                            <p class="stat-change increase"><i class="fas fa-arrow-up"></i> <span class="percent-change">0%</span> from last month</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(10, 207, 151, 0.1);">
+                            <i class="fas fa-piggy-bank" style="color: #0acf97;"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Budget Left</h3>
+                            <p class="stat-value budget-left">₹3,000.00</p>
+                            <p class="stat-change neutral"><i class="fas fa-minus"></i> <span class="percent-used">0%</span> used</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background-color: rgba(250, 92, 124, 0.1);">
+                            <i class="fas fa-chart-line" style="color: #fa5c7c;"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Avg. Daily Spend</h3>
+                            <p class="stat-value avg-daily">₹0.00</p>
+                            <p class="stat-change neutral"><i class="fas fa-minus"></i> <span class="daily-trend">stable</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Expense Trends</h3>
+                            <div class="chart-actions">
+                                <button class="btn btn-sm btn-outline">Weekly</button>
+                                <button class="btn btn-sm btn-outline active">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <!-- Chart will be rendered here by JavaScript -->
+                            <div class="placeholder-chart">
+                                <div class="bar" style="height: 30%;"></div>
+                                <div class="bar" style="height: 50%;"></div>
+                                <div class="bar" style="height: 70%;"></div>
+                                <div class="bar" style="height: 40%;"></div>
+                                <div class="bar" style="height: 60%;"></div>
+                                <div class="bar" style="height: 80%;"></div>
+                                <div class="bar" style="height: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Expense Categories</h3>
+                            <div class="chart-actions">
+                                <button class="btn btn-sm btn-outline">Weekly</button>
+                                <button class="btn btn-sm btn-outline active">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <!-- Chart will be rendered here by JavaScript -->
+                            <div class="placeholder-pie">
+                                <div class="pie-segment" style="--percentage: 35%; --color: #727cf5;"></div>
+                                <div class="pie-segment" style="--percentage: 25%; --color: #ff9f43;"></div>
+                                <div class="pie-segment" style="--percentage: 20%; --color: #0acf97;"></div>
+                                <div class="pie-segment" style="--percentage: 20%; --color: #fa5c7c;"></div>
+                            </div>
+                            <div class="pie-legend">
+                                <div class="legend-item"><span style="background-color: #727cf5;"></span> Food (35%)</div>
+                                <div class="legend-item"><span style="background-color: #ff9f43;"></span> Transport (25%)</div>
+                                <div class="legend-item"><span style="background-color: #0acf97;"></span> Shopping (20%)</div>
+                                <div class="legend-item"><span style="background-color: #fa5c7c;"></span> Others (20%)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-expenses">
+                    <div class="section-header">
+                        <h3>Recent Expenses</h3>
+                        <a href="#expenses" class="view-all">View All</a>
+                    </div>
+                    <div class="expense-list">
+                        <div class="expense-item">
+                            <div class="expense-icon" style="background-color: rgba(114, 124, 245, 0.1);">
+                                <i class="fas fa-utensils" style="color: #727cf5;"></i>
+                            </div>
+                            <div class="expense-details">
+                                <h4>Dinner at Restaurant</h4>
+                                <p>Food & Dining</p>
+                            </div>
+                            <div class="expense-date">
+                                <p>Today</p>
+                            </div>
+                            <div class="expense-amount">
+                                <p>-₹85.00</p>
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <div class="expense-icon" style="background-color: rgba(255, 159, 67, 0.1);">
+                                <i class="fas fa-shopping-bag" style="color: #ff9f43;"></i>
+                            </div>
+                            <div class="expense-details">
+                                <h4>Grocery Shopping</h4>
+                                <p>Groceries</p>
+                            </div>
+                            <div class="expense-date">
+                                <p>Yesterday</p>
+                            </div>
+                            <div class="expense-amount">
+                                <p>-₹120.50</p>
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <div class="expense-icon" style="background-color: rgba(10, 207, 151, 0.1);">
+                                <i class="fas fa-gas-pump" style="color: #0acf97;"></i>
+                            </div>
+                            <div class="expense-details">
+                                <h4>Gas </h4>
+                                <p>Transportation</p>
+                            </div>
+                            <div class="expense-date">
+                                <p>2 days ago</p>
+                            </div>
+                            <div class="expense-amount">
+                                <p>-₹45.00</p>
+                            </div>
+                        </div>
+                        <div class="expense-item">
+                            <div class="expense-icon" style="background-color: rgba(250, 92, 124, 0.1);">
+                                <i class="fas fa-film" style="color: #fa5c7c;"></i>
+                            </div>
+                            <div class="expense-details">
+                                <h4>Movie Tickets</h4>
+                                <p>Entertainment</p>
+                            </div>
+                            <div class="expense-date">
+                                <p>3 days ago</p>
+                            </div>
+                            <div class="expense-amount">
+                                <p>₹ 32.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Expense Modal -->
+    <div class="modal" id="expense-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Expense</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="expense-title">Title</label>
+                        <input type="text" id="expense-title" placeholder="What did you spend on?">
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-amount">Amount</label>
+                        <div class="amount-input">
+                            <span class="currency">₹</span>
+                            <input type="number" id="expense-amount" placeholder="0.00" step="0.01">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-category">Category</label>
+                        <select id="expense-category">
+                            <option value="">Select a category</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="utilities">Utilities</option>
+                            <option value="health">Health</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-date">Date</label>
+                        <input type="date" id="expense-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-notes">Notes (Optional)</label>
+                        <textarea id="expense-notes" placeholder="Add any additional details..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancel-expense">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Expense</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
